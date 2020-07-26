@@ -3,6 +3,8 @@ esphome:
   platform: ESP8266
   board: d1_mini
   includes:
+    - src/FeederController.h
+    - src/Watchdog.h
     - src/PetFeederComponent.h
 
 wifi:
@@ -32,7 +34,7 @@ output:
   - platform: esp8266_pwm
     pin: D1
     frequency: 490 Hz # Like arduino nano
-    inverted: false
+    inverted: true
     id: driver_pwm_output
   - platform: gpio
     pin: D2
